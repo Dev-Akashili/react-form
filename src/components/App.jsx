@@ -10,22 +10,12 @@ function App() {
   function handleChange(event) {
     const { name, value } = event.target;
 
-    setContact((prevValue) => {
+    setContact(prevValue => {
       return {
         ...prevValue,
         [name]: value
       };
     });
-  }
-
-  const [isMouseOver, setMouseOver] = useState(false);
-
-  function handMouseOver() {
-    setMouseOver(true);
-  }
-
-  function handleMouseOut() {
-    setMouseOver(false);
   }
 
   return (
@@ -53,13 +43,7 @@ function App() {
           value={contact.email}
           placeholder="Email"
         />
-        <button
-          onMouseOver={handMouseOver}
-          onMouseOut={handleMouseOut}
-          style={{ backgroundColor: isMouseOver ? "black" : "white" }}
-        >
-          Submit
-        </button>
+        <button>Submit</button>
       </form>
     </div>
   );
